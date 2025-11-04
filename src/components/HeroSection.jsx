@@ -1,6 +1,7 @@
 import React from 'react';
 import Spline from '@splinetool/react-spline';
 import { Rocket, Star } from 'lucide-react';
+import PRFlowOverlay from './PRFlowOverlay.jsx';
 
 const HeroSection = ({ onOpenPopup }) => {
   return (
@@ -37,12 +38,14 @@ const HeroSection = ({ onOpenPopup }) => {
           </div>
         </div>
         <div className="order-1 h-[420px] w-full md:order-2 md:h-[520px]">
-          <div className="h-full w-full rounded-2xl border-4 border-black bg-white shadow-[10px_10px_0_0_#000] overflow-hidden">
+          <div className="relative h-full w-full overflow-hidden rounded-2xl border-4 border-black bg-white shadow-[10px_10px_0_0_#000]">
             {/* Spline scene */}
             <Spline
               scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode"
               style={{ width: '100%', height: '100%' }}
             />
+            {/* Animated PR flow overlay that doesn't block interactions */}
+            <PRFlowOverlay />
           </div>
         </div>
       </div>
