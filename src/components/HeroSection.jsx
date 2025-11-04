@@ -1,6 +1,6 @@
 import React from 'react';
 import Spline from '@splinetool/react-spline';
-import { Rocket, Star } from 'lucide-react';
+import { Rocket, Star, Github } from 'lucide-react';
 import PRFlowOverlay from './PRFlowOverlay.jsx';
 
 const HeroSection = ({ onOpenPopup }) => {
@@ -16,10 +16,10 @@ const HeroSection = ({ onOpenPopup }) => {
             <span className="text-xs font-bold uppercase tracking-wider">Free AI Code Review</span>
           </div>
           <h1 className="mt-5 text-4xl font-extrabold leading-tight text-black md:text-6xl">
-            Ship better code with a playful, powerful AI reviewer
+            Ship better code with a GitHub‑focused AI reviewer
           </h1>
           <p className="mt-4 max-w-prose text-lg text-neutral-700">
-            Get instant feedback on pull requests, catch issues early, and keep your repo clean. Built to match a neo-brutalist, high-contrast vibe.
+            Purpose‑built for pull requests: summaries, automated checks, and actionable suggestions that help you merge with confidence.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <button
@@ -37,15 +37,23 @@ const HeroSection = ({ onOpenPopup }) => {
             </a>
           </div>
         </div>
+
+        {/* Visual panel with a GitHub/code‑review related Spline */}
         <div className="order-1 h-[420px] w-full md:order-2 md:h-[520px]">
           <div className="relative h-full w-full overflow-hidden rounded-2xl border-4 border-black bg-white shadow-[10px_10px_0_0_#000]">
-            {/* Spline scene */}
+            {/* New Spline scene themed around coding/IDE window to fit GitHub + reviews */}
             <Spline
-              scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode"
+              scene="https://prod.spline.design/1m3a0cQHq6c9dH5B/scene.splinecode"
               style={{ width: '100%', height: '100%' }}
             />
-            {/* Animated PR flow overlay that doesn't block interactions */}
+
+            {/* Lightweight overlay reinforcing PR flow without blocking interaction */}
             <PRFlowOverlay />
+
+            {/* Subtle label chip to clarify context */}
+            <div className="pointer-events-none absolute left-3 top-3 inline-flex items-center gap-2 rounded-xl border-4 border-black bg-neutral-100/90 px-3 py-1 text-xs font-extrabold shadow-[4px_4px_0_0_#000]">
+              <Github className="h-4 w-4" /> PR Workspace
+            </div>
           </div>
         </div>
       </div>
